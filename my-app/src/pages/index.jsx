@@ -1,6 +1,7 @@
 
 import PersonalData from "@/components/PersonalData";
-import AccessData from "@/components/AccesData";
+import Email from "@/components/Email";
+import Password from "@/components/AccesData";
 
 import React from 'react'
 
@@ -8,7 +9,8 @@ export default function Home() {
   return (
     <div>
       <PersonalData/>
-      <AccessData/>
+      <Email/>
+      <Password/>
     </div>
   )
 }

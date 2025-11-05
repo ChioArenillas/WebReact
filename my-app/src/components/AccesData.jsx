@@ -1,16 +1,10 @@
 import React from 'react'
 
-export default function AccessData() {
-    let email = "chioalvarez@email.com"
-    let password = "Ajr043&cG#"
+export default function Password() {
   return (
     <div>
-      <h1>Email:</h1>
-      <input placeholder={email}/>
-      <h1>Password:</h1>
-      <input placeholder={password}/>
-      <br></br>      <br></br>
-      <button> "confirmar" </button>
+      <span>Password:</span>
+      <input type='password' value = {'Mi contraseña'}></input>
     </div>
   )
 }
