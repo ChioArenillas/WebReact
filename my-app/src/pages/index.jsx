@@ -5,12 +5,24 @@ import Password from "@/components/AccesData";
 
 import React from 'react'
 
+//hacer una petición al back para recibir la info de usuario
+const getUserInfo = () => {
+    return{
+        name: 'Chio',
+        surname: 'Alvarez',
+        email: 'chioalvarez@email.com',
+    }
+}
+const userInfo = getUserInfo()
+
 export default function Home() {
   return (
-    <div>
-      <PersonalData/>
-      <Email/>
+    <>
+      <PersonalData name={userInfo.name} surname={userInfo.surname}/>
+      <Email email={userInfo.email}/>
       <Password/>
-    </div>
+    </>
   )
 }
+
+//MINUTO 52
