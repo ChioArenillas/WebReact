@@ -1,7 +1,7 @@
 
 import PersonalData from "@/components/PersonalData";
 import Email from "@/components/Email";
-import Password from "@/components/AccesData";
+import Password from "@/components/Password";
 
 import React from 'react'
 
@@ -25,4 +25,3 @@ export default function Home() {
   )
 }
 
-//MINUTO 52
