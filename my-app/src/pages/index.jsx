@@ -9,7 +9,7 @@ import { setUserInfo } from "./api/user";
 
 import Cart from "@/components/Cart";
 
-import AlumnoInfo from "@/components/New";
+import AlumnoInfo from "@/components/Alumnos";
 import { useEffect, useState } from "react";
 
 import React from 'react';
