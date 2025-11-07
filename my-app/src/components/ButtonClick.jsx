@@ -12,7 +12,7 @@ export default function Counter() {
       if(clickState > 10){
         console.log(`click >10`)
       }
-    }, [clickState])
+    }, [clickState]) // Puede darse de 3 formas, con el array comleto (cada vez que pasa por ese array), con el array vacío [] (en este caso solo se da una vez, cuándo se inicializa el componente), o sin array (se realiza todo el tiempo, no hay condiciones).
 
     const addClickCounter = (e) => {
         setClick(clickState +1)
@@ -56,7 +56,7 @@ export default function Counter() {
       <button onClick={addClickCounter}>+</button>
       <button onClick={lessClickCounter} disabled={clickState<=0}>-</button> {/* disabled o hidden para ocultar o desmarcar si no se puede usar 
       <p>Clicks: {clickState} </p>
-      <hr/>
+      <hr/> //esto es una línea de división
       <div>
         <p>Nombre: {userInfo.name}</p>
         <p>Apellido: {userInfo.surname}</p>

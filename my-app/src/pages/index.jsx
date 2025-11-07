@@ -6,6 +6,7 @@ import Counter from "@/components/ButtonClick";
 import { setUserInfo } from "./api/user";
 
 import React from 'react'
+import Cart from "@/components/Cart";
 
 //hacer una petición al back para recibir la info de usuario
 export const userInfo = setUserInfo()
@@ -17,6 +18,7 @@ export default function Home() {
       <Email email={userInfo.email}/>
       <Password/>
       <Counter/>
+      <Cart/>
     </>
   )
 }
