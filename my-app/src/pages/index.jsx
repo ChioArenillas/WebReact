@@ -2,18 +2,13 @@
 import PersonalData from "@/components/PersonalData";
 import Email from "@/components/Email";
 import Password from "@/components/Password";
+import Counter from "@/components/ButtonClick";
+import { setUserInfo } from "./api/user";
 
 import React from 'react'
 
 //hacer una petición al back para recibir la info de usuario
-const getUserInfo = () => {
-    return{
-        name: 'Chio',
-        surname: 'Alvarez',
-        email: 'chioalvarez@email.com',
-    }
-}
-const userInfo = getUserInfo()
+export const userInfo = setUserInfo()
 
 export default function Home() {
   return (
@@ -21,6 +16,7 @@ export default function Home() {
       <PersonalData name={userInfo.name} surname={userInfo.surname}/>
       <Email email={userInfo.email}/>
       <Password/>
+      <Counter/>
     </>
   )
 }

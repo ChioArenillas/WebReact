@@ -14,4 +14,3 @@ export default function PersonalData(props) { //se pone props de propiedades nor
         </div>
     )
 }
-
