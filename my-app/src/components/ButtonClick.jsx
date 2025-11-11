@@ -12,7 +12,7 @@ export default function Counter() {
       if(clickState > 10){
         console.log(`click >10`)
       }
-    }, [clickState]) // Puede darse de 3 formas, con el array comleto (cada vez que pasa por ese array), con el array vacío [] (en este caso solo se da una vez, cuándo se inicializa el componente), o sin array (se realiza todo el tiempo, no hay condiciones).
+    }, [clickState]) 
 
     const addClickCounter = (e) => {
         setClick(clickState +1)
