@@ -6,6 +6,7 @@ export default function AlumnoInfo(props) {
     const [pagado, setPagado] = useState(false)
     const pagarHandler = () =>{
         setPagado(true)
+        counterAlumnosPagados()
     }
   return (
     <div className='alumno'>
