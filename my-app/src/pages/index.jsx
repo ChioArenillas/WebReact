@@ -29,10 +29,19 @@ import ComponenteHijo from "@/components/Hijo";
 //hacer una petición al back para recibir la info de usuario
 export const userInfo = setUserInfo()
 
-
-export default function Home() {
+/* 
+    return (
+    <> 
+      <PersonalData name={userInfo.name} surname={userInfo.surname}/>
+      <Email email={userInfo.email}/>
+      <Password/>
+      <Counter/>
+      <Cart/>
+ */
 
 /****************EJEMPLO ALUMNOS ******************
+
+export default function Home() {
 
 const [alumnos, setAlumnos] = useState([])
   const [counterAlumnosQuePagan, setCounterAlumnosQuePagan] = useState(0)
@@ -55,35 +64,9 @@ const [alumnos, setAlumnos] = useState([])
     let alumnosAux = getAlumnos()
     setAlumnos(alumnosAux)
   }, [])
- */
-  /*************** EJEMPLO SALUDO *******************/
 
-  const [saludo, setSaludo] = useState('')
-  const [saludoHijo, setSaludoHijo] = useState('')
-  const [arrayExample, setArrayExample] = useState([1,2,3])
-
-  const addRandomNumberToArrayExample = () => {
-    let arrayAux = [...arrayExample]
-    arrayAux.push(Math.random()*100)
-    setArrayExample(arrayAux)
-    console.log(arrayExample)
-  }
-  const saludar = (param1) => {
-    setSaludo('Hola desde el Padre')
-  }
-  const saludarDesdeHijo = (mensajeDeSaludo) => {
-    setSaludoHijo(mensajeDeSaludo)
-  }
-
- 
-
-  return (
-    <> 
-{/*       <PersonalData name={userInfo.name} surname={userInfo.surname}/>
-      <Email email={userInfo.email}/>
-      <Password/>
-      <Counter/>
-      <Cart/>
+    return (
+    <>     
        <div>
         <h1>La mejor clase:</h1>
         <h3>Mis chavalitos y chavalitas</h3>
@@ -106,29 +89,52 @@ const [alumnos, setAlumnos] = useState([])
             counterAlumnosPagados={counterAlumnosPagados}/>
           })
         }
-      </div>
- */}       
+      </div>      
+ */
+  /*************** EJEMPLO SALUDO *******************/
 
-     <div>
-      <h1>Componente Padre</h1>
-      <button onClick={saludar}>Saluda al hijo</button>
-      <p>{saludoHijo}</p>
-    </div>
-    <hr />
-    <div>
-      <ComponenteHijo
-      saludoParam={saludo}
-      saludarDesdeHijoFn={saludarDesdeHijo}
-      addRandomNumberToArrayExampleFn={addRandomNumberToArrayExample}
-      />
-    </div>
-    <hr />
-    {
-      arrayExample.map(a => {
-        return <p>{a}</p>
-      })
-    }
-</>
-)
-}
+export default function Home() {
+
+  const [saludo, setSaludo] = useState('')
+  const [saludoHijo, setSaludoHijo] = useState('')
+  const [arrayExample, setArrayExample] = useState([1,2,3])
+
+  const addRandomNumberToArrayExample = () => {
+    let arrayAux = [...arrayExample]
+    arrayAux.push(Math.random()*100)
+    setArrayExample(arrayAux)
+    console.log(arrayExample)
+  }
+  const saludar = (param1) => {
+    setSaludo('Hola desde el Padre')
+  }
+  const saludarDesdeHijo = (mensajeDeSaludo) => {
+    setSaludoHijo(mensajeDeSaludo)
+  }
+
+  return (
+    <> 
+      <div>
+        <h1>Componente Padre</h1>
+        <button onClick={saludar}>Saluda al hijo</button>
+        <p>{saludoHijo}</p>
+      </div>
+      <hr />
+      <div>
+        <ComponenteHijo
+        saludoParam={saludo}
+        saludarDesdeHijoFn={saludarDesdeHijo}
+        addRandomNumberToArrayExampleFn={addRandomNumberToArrayExample}
+        />
+      </div>
+      <hr />
+      {
+        arrayExample.map(a => {
+          return <p>{a}</p>
+        })
+      }
+    </>
+)}
+
+  /*************** EJEMPLO FRUTAS *******************/
 
