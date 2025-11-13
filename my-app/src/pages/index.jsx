@@ -16,7 +16,7 @@ import Email from "@/components/Email";
 import Password from "@/components/Password";
 
 import Counter from "@/components/ButtonClick";
-import { setUserInfo } from "./api/user";
+import { setUserInfo } from "../api/user";
 
 import Cart from "@/components/Cart";
 
@@ -24,7 +24,7 @@ import AlumnoInfo from "@/components/Alumnos";
 import { useEffect, useState } from "react";
 
 import React from 'react';
-import { getAlumnos } from "./api/alumnos";
+import { getAlumnos } from "../api/alumnos";
 
 import ComponenteHijo from "@/components/Hijo";
 
@@ -201,28 +201,28 @@ useEffect(() => {
   )
 }
  */
-/*********************  EJEMPLO ROUTER **********************/
+/*********************  EJEMPLO ALUMNOS **********************/
 
 import Link from 'next/link';
 
 export default function Home () {
   return(
     <>
-    <h1>Router</h1>
+    <h1>Gestor de Alumnos</h1>
     <ul>
       <li>
         <Link href={{
-          pathname:'/profile',
-          query:{
-            nombre: 'Chio',
-            apellidos: 'sandies'
-          }
+          pathname:'/ProfilePage',
         }}>Profile</Link>
       </li>
       <li>
-        <Link href={'/nuevaPagina'}>Nueva Pagina</Link>
+        <Link href={{
+          pathname:'/ContactPage'
+          }}>Contacto</Link>
       </li>
     </ul>
+    <hr />
+    <p>Todos los alumnos</p>
   </>
   )
 }

@@ -1,6 +1,6 @@
 
 //BOTÓN SUMAR Y RESTAR
-import { getUserInfo, setUserInfo, userInfo } from '@/pages/api/user'
+import { getUserInfo, setUserInfo, userInfo } from '@/api/user'
 import React, { useEffect, useState } from 'react'
 
 
