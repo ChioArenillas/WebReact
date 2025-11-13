@@ -141,7 +141,7 @@ export default function Home() {
 
 
   /*************** EJEMPLO FRUTAS *******************/
-
+/* 
 import AnyadirFruta from '@/components/AnyadirFruta';
 import Frutas from '@/components/Frutas';
 import {getFrutas} from '../pages/api/apiFetch'
@@ -198,5 +198,31 @@ useEffect(() => {
         guardarFrutas={guardarFrutas} />
       </div>
     </div>
+  )
+}
+ */
+/*********************  EJEMPLO ROUTER **********************/
+
+import Link from 'next/link';
+
+export default function Home () {
+  return(
+    <>
+    <h1>Router</h1>
+    <ul>
+      <li>
+        <Link href={{
+          pathname:'/profile',
+          query:{
+            nombre: 'Chio',
+            apellidos: 'sandies'
+          }
+        }}>Profile</Link>
+      </li>
+      <li>
+        <Link href={'/nuevaPagina'}>Nueva Pagina</Link>
+      </li>
+    </ul>
+  </>
   )
 }
