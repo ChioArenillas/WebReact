@@ -32,7 +32,6 @@ export default function AnyadirFruta(props) {
 
   }
 
-
   return (
     <div>
       <div>
