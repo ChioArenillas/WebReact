@@ -9,6 +9,8 @@ Puede darse de 3 formas:
     [] con el array vacío (en este caso solo se da una vez, cuándo se inicializa el componente)
     o sin array (se realiza todo el tiempo, no hay condiciones).
 */ 
+import styles from '@/styles/Home.module.css'
+
 import PersonalData from "@/components/PersonalData";
 import Email from "@/components/Email";
 import Password from "@/components/Password";
@@ -92,7 +94,7 @@ const [alumnos, setAlumnos] = useState([])
       </div>      
  */
   /*************** EJEMPLO SALUDO *******************/
-
+/* 
 export default function Home() {
 
   const [saludo, setSaludo] = useState('')
@@ -135,6 +137,66 @@ export default function Home() {
       }
     </>
 )}
+ */
+
 
   /*************** EJEMPLO FRUTAS *******************/
 
+import AnyadirFruta from '@/components/AnyadirFruta';
+import Frutas from '@/components/Frutas';
+import {getFrutas} from '../pages/api/apiFetch'
+
+export default function Home() {
+
+const [listaFrutas, setListaFrutas ] = useState ([])
+
+const getFrutasFromApiFetch = () =>{
+  let frutasAux = getFrutas()
+  setListaFrutas(frutasAux)
+}
+
+const eliminarFruta = (id) => {
+  let eliminarFrutaAux = [...listaFrutas]
+  const nuevaListaFruta = eliminarFrutaAux.filter((fruta) => fruta.id != id)
+  setListaFrutas(nuevaListaFruta)
+}
+
+const guardarFrutas = (frutaParam) => {
+  let frutaAux =[...listaFrutas]
+  frutaAux.push(frutaParam)
+  setListaFrutas(frutaAux)
+}
+
+useEffect(() => {
+  getFrutasFromApiFetch()
+}, [])
+
+  return (
+    <div>
+      <div>
+        <h1>FRUTERIA</h1>
+      </div>
+      <div>
+        {
+          listaFrutas.map((fruta, index) => {
+        return <Frutas
+        key={index}
+        id={fruta.id}
+        nombre={fruta.nombre}
+        precioKg={fruta.PrecioKg}
+        origen={fruta.origen}
+        eliminarFruta={eliminarFruta}
+         />
+          })
+        }
+      </div>
+      <div>
+        <br /><hr /> <br />
+      </div>
+      <div>
+        <AnyadirFruta
+        guardarFrutas={guardarFrutas} />
+      </div>
+    </div>
+  )
+}
