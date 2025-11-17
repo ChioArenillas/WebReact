@@ -203,9 +203,18 @@ useEffect(() => {
  */
 /*********************  EJEMPLO ALUMNOS **********************/
 
+import { getUsers } from '@/api/userFetch';
 import Link from 'next/link';
 
-export default function Home () {
+export default function Home () { 
+
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    let usersAux = getUsers()
+    setUsers(usersAux)
+  }, [])
+
   return(
     <>
     <h1>Gestor de Alumnos</h1>
@@ -223,6 +232,24 @@ export default function Home () {
     </ul>
     <hr />
     <p>Todos los alumnos</p>
+    {
+      users.map((user, index) => {
+        return <div key={index}>
+          <span>{user.id} | </span>
+          <span>{user.nombre} | </span>
+          <span>{user.apellidos} | </span>
+          <span>{user.password} | </span>
+          <span>
+            <Link href={{
+              pathname: 'ProfilePage',
+              query: {
+                id: user.id
+              }
+            }} >Ver pelfil del usuario</Link>
+          </span>
+        </div>
+      })
+    }
   </>
   )
 }
