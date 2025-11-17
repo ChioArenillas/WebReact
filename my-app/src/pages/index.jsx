@@ -221,8 +221,8 @@ export default function Home () {
     <ul>
       <li>
         <Link href={{
-          pathname:'/ProfilePage',
-        }}>Profile</Link>
+          pathname:'/CreateUser'
+          }}>Crear un usuario</Link>
       </li>
       <li>
         <Link href={{

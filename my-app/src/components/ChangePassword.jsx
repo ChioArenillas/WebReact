@@ -1,6 +1,7 @@
+import { modifyPassword } from '@/api/userFetch'
 import React, { useState } from 'react'
 
-export default function ChangePassword() {
+export default function ChangePassword(userId) {
 
   const [password, setPassword] = useState('')
   const [confirmPassowrd, setPasswordConfirm] = useState('')
@@ -14,7 +15,7 @@ export default function ChangePassword() {
   }
   const changePassword = () => {
     if(password === confirmPassowrd){
-      console.log()
+      modifyPassword(userId, password)
       setError(false) 
     }else{
       setError(true)

@@ -17,10 +17,10 @@ export default function UserDetails({userId}) { //poner aquí el UserId es igual
       </div>
       <br />
       <div>
-        <span>Nombre: {userLocal.nombre}</span>
+        <span>Nombre: {userLocal?.nombre}</span>
       </div>
       <div>
-        <span>Apellidos: {userLocal.apellidos}</span>
+        <span>Apellidos: {userLocal?.apellidos}</span>
       </div>
     </div>
   )
